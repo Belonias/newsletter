@@ -1,4 +1,4 @@
-from django import forms
+trafrom django import forms
 
 from .models import SignUp
 
@@ -18,6 +18,7 @@ class SignUpForm(forms.ModelForm):
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
+        # email validator
         '''
         email_base, provider = email.split("@")
         domain, extension = provider.split(".")
