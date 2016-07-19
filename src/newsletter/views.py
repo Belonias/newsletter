@@ -33,11 +33,18 @@ def home(request):
 def contact(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
-        print(form.cleaned_data)
+        # much more sense to read the data
+        for key, value in form.cleaned_data.iteritems():
+            print(key, value)
+        # instead of declaring each variable
+        # usefull incase of many fields
+        # for key in form.cleaned_data:
+        #     print(key)
 
-
-
-
+        # email = form.cleaned_data.get("email")
+        # message = form.cleaned_data.get("message")
+        # full_name = form.cleaned_data.get("full_name")
+        # print(email, message, full_name)
 
     context = {
     "form": form,

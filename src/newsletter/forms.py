@@ -7,7 +7,9 @@ class ContactForm(forms.Form):
     email = forms.EmailField()
     message = forms.CharField()
 
-
+    # email validator
+    # we can use the clean_email function
+    # from SignUpForm class
 
 
 class SignUpForm(forms.ModelForm):
